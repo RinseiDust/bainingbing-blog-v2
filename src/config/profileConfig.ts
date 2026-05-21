@@ -5,10 +5,10 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/congyu.png",
 
 	// 名字
-	name: "白凝冰",
+	name: "白凝冰才不是爱撒娇的冰雪小龙女",
 
 	// 个人签名
-	bio: "浙大机械⚙️ · 机器人方向🤖 · 棒球爱好者⚾ · 二次元🎬",
+	bio: "早岁已知世事艰，仍许飞鸿荡云间",
 
 	// 社交链接
 	links: [
