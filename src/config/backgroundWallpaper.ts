@@ -47,6 +47,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			"assets/images/DesktopWallpaper/d4.avif",
 			"assets/images/DesktopWallpaper/d5.avif",
 			"assets/images/DesktopWallpaper/d6.avif",
+			"assets/images/DesktopWallpaper/d7.avif",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
@@ -57,6 +58,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			"assets/images/MobileWallpaper/m4.avif",
 			"assets/images/MobileWallpaper/m5.avif",
 			"assets/images/MobileWallpaper/m6.avif",
+			"assets/images/MobileWallpaper/m7.avif",
 		],
 	},
 	// 横幅壁纸和全屏壁纸共享配置
@@ -78,7 +80,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 				"早き年より世の辛きを知れど、なお雲間を翔ける飛鴻を願う",
 			],
 			// 主页横幅副标题字体大小
-			subtitleSize: "1.2rem",
+			subtitleSize: "1.8rem",
 			typewriter: {
 				// 是否启用打字机效果
 				// 打字机开启 → 循环显示所有副标题
