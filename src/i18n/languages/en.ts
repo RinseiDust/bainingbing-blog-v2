@@ -314,6 +314,18 @@ export const en: Translation = {
 	[Key.galleryNoAlbums]: "No albums yet",
 	[Key.galleryBackToAlbums]: "Back to albums",
 
+	// Clock Widget
+	[Key.clock]: "Clock",
+
+	// Daily Paper Recommendation
+	[Key.dailyPaper]: "Daily Pick",
+
+	// Resource Navigation
+	[Key.resources]: "Resources",
+	[Key.resourcesDescription]:
+		"A curated collection of AI tools, academic sites, robotics resources, quant platforms, and more.",
+	[Key.viewAll]: "View All",
+
 	// Password Protection
 	[Key.passwordProtected]: "Password Protected",
 	[Key.passwordProtectedDesc]:

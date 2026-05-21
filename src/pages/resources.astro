@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "@/layouts/Layout.astro";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import { resourceLinks, resourceCategories } from "@/config/resourceConfig";
+import { siteConfig } from "@/config";
+
+// Page visibility check
+if (siteConfig.pages.resources === false) {
+  return Astro.redirect("/404/");
+}
+
+const title = i18n(I18nKey.resources);
+const description = i18n(I18nKey.resourcesDescription);
+
+// Group links by category
+const grouped = resourceCategories.map((cat) => ({
+  ...cat,
+  links: resourceLinks.filter((l) => l.category === cat.name),
+}));
+
+
+---
+
+<Layout title={title} description={description}>
+  <MainGridLayout
+    title={title}
+    description={description}
+  >
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <!-- Page Header -->
+      <div class="text-center mb-10">
+        <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+          {title}
+        </h1>
+        <p class="text-neutral-500 dark:text-neutral-400 max-w-lg mx-auto">
+          {description}
+        </p>
+      </div>
+
+      <!-- Categorized Resource Sections -->
+      <div class="flex flex-col gap-8">
+        {grouped.filter((g) => g.links.length > 0).map((group) => (
+          <section>
+            <div class="flex items-center gap-2.5 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800">
+              <div class="text-(--primary) text-xl">
+                <Icon name={group.icon} />
+              </div>
+              <h2 class="text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                {group.name}
+              </h2>
+              <span class="text-xs text-neutral-400 ml-1">
+                ({group.links.length})
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {group.links.map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-base p-4 flex items-start gap-3 hover:ring-2 hover:ring-(--primary)/20 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 group"
+                >
+                  <div class="text-(--primary) text-2xl mt-0.5 shrink-0">
+                    <Icon name={link.icon} />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-1.5">
+                      <span class="font-semibold text-sm text-neutral-800 dark:text-neutral-200 group-hover:text-(--primary) transition-colors">
+                        {link.name}
+                      </span>
+                      <Icon
+                        name="material-symbols:open-in-new"
+                        class="text-xs text-neutral-300 dark:text-neutral-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                      />
+                    </div>
+                    <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2">
+                      {link.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </MainGridLayout>
+</Layout>

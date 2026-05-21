@@ -316,6 +316,11 @@ export const ru: Translation = {
 	[Key.galleryBackToAlbums]: "Вернуться к альбомам",
 
 	// Защита паролем
+	[Key.clock]: "Часы",
+	[Key.dailyPaper]: "Рекомендация дня",
+	[Key.resources]: "Ресурсы",
+	[Key.resourcesDescription]: "Подборка ссылок на AI инструменты, академические сайты, ресурсы по робототехнике и量化-платформы.",
+	[Key.viewAll]: "Посмотреть все",
 	[Key.passwordProtected]: "Защищено паролем",
 	[Key.passwordProtectedDesc]:
 		"Этот контент защищён паролем. Пожалуйста, введите пароль для просмотра.",

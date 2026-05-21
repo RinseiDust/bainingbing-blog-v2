@@ -308,6 +308,11 @@ export const zh_TW: Translation = {
 	[Key.galleryBackToAlbums]: "返回相簿列表",
 
 	// 密碼保護
+	[Key.clock]: "時鐘",
+	[Key.dailyPaper]: "每日推薦",
+	[Key.resources]: "資源導航",
+	[Key.resourcesDescription]: "整理常用的 AI 工具、學術網站、機器人資源、量化平台等連結，方便隨時訪問。",
+	[Key.viewAll]: "查看全部",
 	[Key.passwordProtected]: "密碼保護",
 	[Key.passwordProtectedDesc]: "此內容已被密碼保護，請輸入密碼查看。",
 	[Key.passwordHint]: "提示",

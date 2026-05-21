@@ -1,0 +1,56 @@
+---
+import { Icon } from "astro-icon/components";
+import WidgetLayout from "@/components/common/WidgetLayout.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import { resourceLinks } from "@/config/resourceConfig";
+import { url } from "@/utils/url-utils";
+
+interface Props {
+  class?: string;
+  style?: string;
+}
+
+const { class: className, style } = Astro.props;
+
+// Show up to 8 highlighted links in the sidebar widget
+const highlightLinks = resourceLinks.slice(0, 8);
+const totalCount = resourceLinks.length;
+---
+
+<WidgetLayout name={i18n(I18nKey.resources)} id="resources-widget" class={className} style={style}>
+  <div class="flex flex-col gap-1">
+    {highlightLinks.map((link) => (
+      <a
+        href={link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2.5 px-2 py-1.5 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors group"
+      >
+        <div class="text-(--primary) text-lg w-5 flex justify-center">
+          <Icon name={link.icon} />
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium text-neutral-800 dark:text-neutral-200 truncate">
+            {link.name}
+          </div>
+          <div class="text-xs text-neutral-400 dark:text-neutral-500 truncate">
+            {link.description}
+          </div>
+        </div>
+        <Icon
+          name="material-symbols:open-in-new"
+          class="text-xs text-neutral-300 dark:text-neutral-600 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+        />
+      </a>
+    ))}
+  </div>
+  <a
+    href={url("/resources/")}
+    class="flex items-center justify-center gap-1 mt-2 py-1.5 text-xs text-(--primary) hover:underline rounded-lg hover:bg-(--primary)/5 transition-colors"
+  >
+    {i18n(I18nKey.viewAll)}
+    ({totalCount})
+    <Icon name="material-symbols:arrow-forward" class="text-sm" />
+  </a>
+</WidgetLayout>

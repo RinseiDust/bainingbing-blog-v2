@@ -36,6 +36,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		children: [
 			...(siteConfig.pages.gallery ? [LinkPreset.Gallery] : []),
 			...(siteConfig.pages.bangumi ? [LinkPreset.Bangumi] : []),
+			...(siteConfig.pages.resources ? [LinkPreset.Resources] : []),
 		],
 	});
 

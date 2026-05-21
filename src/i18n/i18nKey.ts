@@ -301,6 +301,17 @@ enum I18nKey {
 	galleryNoAlbums = "galleryNoAlbums",
 	galleryBackToAlbums = "galleryBackToAlbums",
 
+	// 时钟组件
+	clock = "clock",
+
+	// 每日文献推荐
+	dailyPaper = "dailyPaper",
+
+	// 资源导航
+	resources = "resources",
+	resourcesDescription = "resourcesDescription",
+	viewAll = "viewAll",
+
 	// 密码保护
 	passwordProtected = "passwordProtected",
 	passwordProtectedDesc = "passwordProtectedDesc",

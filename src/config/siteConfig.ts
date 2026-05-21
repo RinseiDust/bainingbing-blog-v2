@@ -115,6 +115,7 @@ export const siteConfig: SiteConfig = {
 		guestbook: true,
 		bangumi: true,
 		gallery: true,
+		resources: true,
 	},
 
 	// 分类导航栏开关

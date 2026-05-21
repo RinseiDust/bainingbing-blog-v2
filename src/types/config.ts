@@ -86,6 +86,7 @@ export type SiteConfig = {
 		guestbook: boolean; // 留言板页面开关
 		bangumi: boolean;
 		gallery: boolean; // 相册页面开关
+		resources: boolean; // 资源导航页面开关
 	};
 
 	// 分类导航栏开关
@@ -178,6 +179,7 @@ export enum LinkPreset {
 	Guestbook = 5,
 	Bangumi = 6,
 	Gallery = 7,
+	Resources = 8,
 }
 
 export type NavBarLink = {
@@ -419,7 +421,10 @@ export type WidgetComponentType =
 	| "advertisement"
 	| "stats"
 	| "calendar"
-	| "music";
+	| "music"
+	| "clock"
+	| "dailyPaper"
+	| "resources";
 
 export type WidgetComponentConfig = {
 	type: WidgetComponentType; // 组件类型

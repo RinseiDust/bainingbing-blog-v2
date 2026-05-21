@@ -1,0 +1,67 @@
+---
+import WidgetLayout from "@/components/common/WidgetLayout.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import { siteConfig } from "@/config";
+
+interface Props {
+  class?: string;
+  style?: string;
+}
+
+const { class: className, style } = Astro.props;
+
+const weekDays = [
+  i18n(I18nKey.calendarSunday),
+  i18n(I18nKey.calendarMonday),
+  i18n(I18nKey.calendarTuesday),
+  i18n(I18nKey.calendarWednesday),
+  i18n(I18nKey.calendarThursday),
+  i18n(I18nKey.calendarFriday),
+  i18n(I18nKey.calendarSaturday),
+];
+
+const timezone = siteConfig.timezone || "Asia/Shanghai";
+---
+
+<WidgetLayout name={i18n(I18nKey.clock)} id="clock-widget" class={className} style={style}>
+  <div class="flex flex-col items-center py-2">
+    <div id="clock-time" class="text-3xl font-bold text-neutral-900 dark:text-neutral-100 tabular-nums tracking-wider">
+      --:--:--
+    </div>
+    <div id="clock-date" class="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
+      ----
+    </div>
+  </div>
+</WidgetLayout>
+
+<script is:inline define:vars={{ weekDays, timezone }}>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    const year = now.getFullYear();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const weekday = weekDays[now.getDay()];
+
+    const timeEl = document.getElementById("clock-time");
+    const dateEl = document.getElementById("clock-date");
+
+    if (timeEl) {
+      timeEl.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    if (dateEl) {
+      dateEl.textContent = `${year}年${month}月${day}日 星期${weekday}`;
+    }
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  document.addEventListener("swup:contentReplaced", () => {
+    setTimeout(updateClock, 50);
+  });
+</script>

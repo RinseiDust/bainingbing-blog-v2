@@ -314,6 +314,11 @@ export const ja: Translation = {
 	[Key.galleryBackToAlbums]: "アルバム一覧に戻る",
 
 	// パスワード保護
+	[Key.clock]: "時計",
+	[Key.dailyPaper]: "日替わり推薦",
+	[Key.resources]: "リソース",
+	[Key.resourcesDescription]: "AIツール、学術サイト、ロボットリソース、量子プラットフォームなどをまとめたリンク集。",
+	[Key.viewAll]: "すべて見る",
 	[Key.passwordProtected]: "パスワード保護",
 	[Key.passwordProtectedDesc]:
 		"このコンテンツはパスワードで保護されています。表示するにはパスワードを入力してください。",

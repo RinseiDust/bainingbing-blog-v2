@@ -305,6 +305,18 @@ export const zh_CN: Translation = {
 	[Key.galleryNoAlbums]: "暂无相册",
 	[Key.galleryBackToAlbums]: "返回相册列表",
 
+	// 时钟组件
+	[Key.clock]: "时钟",
+
+	// 每日文献推荐
+	[Key.dailyPaper]: "每日推荐",
+
+	// 资源导航
+	[Key.resources]: "资源导航",
+	[Key.resourcesDescription]:
+		"整理常用的 AI 工具、学术网站、机器人资源、量化平台等链接，方便随时访问。",
+	[Key.viewAll]: "查看全部",
+
 	// 密码保护
 	[Key.passwordProtected]: "密码保护",
 	[Key.passwordProtectedDesc]: "此内容已被密码保护，请输入密码查看。",
