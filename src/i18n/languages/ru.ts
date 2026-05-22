@@ -199,6 +199,8 @@ export const ru: Translation = {
 	[Key.pageViews]: "Просмотры",
 	[Key.pageViewsLoading]: "Загрузка...",
 	[Key.pageViewsError]: "Статистика недоступна",
+	[Key.siteTotalVisitors]: "Посетители",
+	[Key.siteTodayVisitors]: "Сегодня",
 
 	// Закреплено
 	[Key.pinned]: "Закреплено",

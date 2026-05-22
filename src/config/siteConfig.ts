@@ -80,7 +80,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	// 站点开始日期
-	siteStartDate: "2025-05-22",
+	siteStartDate: "2026-05-22",
 
 	// 站点时区
 	timezone: "Asia/Shanghai",
